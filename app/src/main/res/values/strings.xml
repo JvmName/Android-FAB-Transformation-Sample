@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FabAnimationActivity</string>
+    <string name="title_color">Colors: %1$s</string>
+</resources>

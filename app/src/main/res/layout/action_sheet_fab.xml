@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:parentTag="androidx.coordinatorlayout.widget.CoordinatorLayout"
+>
+
+    <FrameLayout
+            android:id="@+id/fab_scrim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3C000000"
+            android:visibility="invisible"
+            app:layout_behavior="com.google.android.material.transformation.FabTransformationScrimBehavior"
+    />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_filter_list"
+    />
+
+    <com.google.android.material.transformation.TransformationChildLayout
+            android:id="@+id/fab_menu"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:visibility="invisible"
+            app:layout_behavior="com.google.android.material.transformation.FabTransformationSheetBehavior"
+    >
+
+        <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+        >
+
+            <LinearLayout
+                    android:id="@+id/fab_menu_inner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="bottom"
+            >
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fab_menu_default"
+                        android:layout_width="match_parent"
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                        android:text="Default Sorting"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:icon="@drawable/ic_sort"
+                        android:layout_height="55dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fab_menu_random"
+                        android:layout_width="match_parent"
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                        android:text="Random Sorting"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:icon="@drawable/ic_shuffle_black"
+                        android:layout_height="55dp"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fab_menu_bottom"
+                        android:layout_width="match_parent"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"
+                        android:text="Sort Colors"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:icon="@drawable/ic_filter_list"
+                        android:layout_height="55dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.transformation.TransformationChildLayout>
+</merge>
